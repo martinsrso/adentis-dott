@@ -1,2 +1,5 @@
 *.class
 *.log
+.idea
+.bsp
+.DS_Store
