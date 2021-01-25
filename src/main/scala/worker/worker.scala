@@ -32,6 +32,7 @@ object Worker {
           item.product.createDate.isAfter(startDate)))
   }
 
+  // 1-3 4-7 8-12 >12 = (1,3), (4,7), (8, 12), (12, 1231233)
   def mountRange(ranges: String): List[(Int, Int)] = {
     val replaceRanges = ranges.replace(">", "")
     val arrRanges = replaceRanges.split(" ")

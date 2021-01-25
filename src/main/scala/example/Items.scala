@@ -58,15 +58,24 @@ object Items {
     mockItems.add(new Item(BigDecimal.valueOf(10L) + BigDecimal.valueOf(23L) + product15.price, BigDecimal.valueOf(10L), BigDecimal.valueOf(23L), product15))
   }
 
-    def generateRandomItemsList: List[Item] = {
-      populateItems()
-      val itemList = ListBuffer[Item]()
-      val listSize = new Random().nextInt(5) + 1
+  def generateRandomItemsList: List[Item] = {
+    populateItems()
+    val itemList = ListBuffer[Item]()
+    val listSize = new Random().nextInt(5) + 1
 
-      for (i <- 0 to listSize)
-        itemList += mockItems.get(new Random().nextInt(mockItems.size))
+    for (i <- 0 to listSize)
+      itemList += mockItems.get(new Random().nextInt(mockItems.size))
 
-      itemList.toList
-    }
+    itemList.toList
+  }
 
+  def generateItemsList: List[Item] = {
+    populateItems()
+    val itemList = ListBuffer[Item]()
+
+    for (i <- 0 to mockItems.size()-1)
+      itemList += mockItems.get(i)
+
+    itemList.toList
+  }
 }
